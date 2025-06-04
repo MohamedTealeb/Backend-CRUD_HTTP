@@ -111,3 +111,22 @@ else if (url.startsWith('/users/') && method === 'GET') {
 //It handles the event loop, thread pool, and low-level tasks like file system and network operations behind the scenes.
 
 
+//part 2 ans of question 3
+// 3.
+// Node.js uses an event-driven architecture. It relies on libuv, a C++ library, to handle asynchronous tasks (like file system, network) via a thread pool. The event loop monitors task completion and runs callbacks once they’re ready.
+
+//4
+//Call Stack: Executes synchronous code (one function at a time).
+
+//Event Queue: Stores callbacks from completed async tasks.
+
+//Event Loop: Continuously checks if the call stack is empty, then pushes tasks from the event queue into the stack.
+
+//5 
+//Thread pool is a set of background threads (default 4) managed by libuv to handle CPU-intensive tasks like fs, crypto, and dns operations.
+//UV_THREADPOOL_SIZE=8 node app.js
+
+//6
+//Blocking: Stops execution until task finishes (fs.readFileSync()).
+//Non-blocking: Runs task in background and continues (fs.readFile()).
+
